@@ -13,7 +13,6 @@ def top_ten(subreddit):
                                     allow_redirects=False)
         if ggp_response.status_code != 200:
             print("OK", end="")
-            return
         ggp_posts = ggp_response.json().get("data", {}).get("children", [])
         for ggp_post in ggp_posts:
             print(ggp_post.get("data", {}).get("title"))
